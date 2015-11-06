@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+
+<head>
+	<base href="/src/" />
+	<title>Pantry Manager</title>
+	<script src="../../node_modules/systemjs/dist/system.src.js"></script>
+	<script src="../../node_modules/angular2/bundles/angular2.dev.js"></script>
+	<script src="../../node_modules/angular2/bundles/router.dev.js"></script>
+	<script>
+		System.config({
+			packages: {'app': {defaultExtension: 'js'}}
+		});
+		System.import('app/bootstrap').catch(console.log.bind(console));
+	</script>
+</head>
+
+<body>
+	<pantry-manager>Loading...</pantry-manager>
+</body>
+
+</html>
