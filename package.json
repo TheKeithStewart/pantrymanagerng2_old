@@ -20,6 +20,7 @@
   "homepage": "https://github.com/kgs916/pantrymanagerng2#readme",
   "dependencies": {
     "angular2": "^2.0.0-alpha.45",
+    "falcor": "^0.1.14",
     "systemjs": "^0.19.5"
   },
   "devDependencies": {

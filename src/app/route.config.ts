@@ -1,11 +1,11 @@
-import {RecipesComponent} from './recipes.component';
-import {PantryComponent} from './pantry.component';
+import {RecipeListComponent} from './recipes/recipeList.component';
+import {PantryComponent} from './pantry/pantry.component';
 
 export var Routes = {
 	recipes: {
 		path: '/',
-		as: 'Recipes',
-		component: RecipesComponent
+		as: 'RecipeList',
+		component: RecipeListComponent
 	},
 	pantry: {
 		path: '/pantry',
