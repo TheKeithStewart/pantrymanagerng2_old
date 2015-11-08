@@ -21,27 +21,37 @@ export class RecipeListComponent implements OnInit {
 		this.recipes = [];
 
 		this._recipesService.getRecipes()
-			.then((recipeHash: IRecipeHash) => {
-				for (var i in recipeHash) {
-					this.recipes.push(recipeHash[i]);		
-
-					// this.recipes.push(recipeHash[i])
+			.then((response) => {
+				for (var i in response) {
+					this.recipes.push(response[i]);
 				}
-				
-				// 				this.recipes.push(
-				// 	new RecipeItemComponent(
-				// 		recipeHash[i].recipeId,
-				// 		recipeHash[i].recipeTitle,
-				// 		recipeHash[i].notes,
-				// 		recipeHash[i].sourceURL
-				// 	)
-				// )
 			});
 
-		return this.recipes;
+		
+
+		// this._recipesService.getRecipes()
+		// 	.then((recipeHash: IRecipeHash) => {
+		// 		console.log(recipeHash);
+		// 		for (var i in recipeHash) {
+		// 			this.recipes.push(recipeHash[i]);		
+
+		// 			// this.recipes.push(recipeHash[i])
+		// 		}
+		// 		console.log('this.recipes', this.recipes);
+				
+		// 		// 				this.recipes.push(
+		// 		// 	new RecipeItemComponent(
+		// 		// 		recipeHash[i].recipeId,
+		// 		// 		recipeHash[i].recipeTitle,
+		// 		// 		recipeHash[i].notes,
+		// 		// 		recipeHash[i].sourceURL
+		// 		// 	)
+		// 		// )
+		// 	});
+
 	}
 
 	onInit() {
-		this.recipes = this.getRecipes();
+		this.getRecipes();
 	}
 }

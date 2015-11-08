@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc -p src/client -w",
-    "start": "live-server --open=src/client"
+    "nodemon_task": "nodemon --watch . --ext js,jsx src/server/index.js",
+    "nodemon": "npm-run-all --parallel nodemon_task"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,16 @@
   "homepage": "https://github.com/kgs916/pantrymanagerng2#readme",
   "dependencies": {
     "angular2": "^2.0.0-alpha.45",
+    "express": "^4.13.3",
     "falcor": "^0.1.14",
+    "falcor-express": "^0.1.2",
+    "falcor-router": "^0.2.11",
+    "npm-run-all": "^1.2.13",
     "systemjs": "^0.19.5"
   },
   "devDependencies": {
     "live-server": "^0.8.2",
-    "typescript": "^1.6.2"
+    "typescript": "^1.6.2",
+    "watchify": "^3.6.0"
   }
 }
