@@ -1,3 +1,6 @@
 <div>recipes:</div>
+	<!--<ul>
 	<li *ng-for="#recipe of recipes">{{ recipe.recipeTitle }} --- {{ recipe.notes }}<li>
-</ul>
+</ul>-->
+
+<recipe-item *ng-for="#item of recipes" [recipe]="item"></recipe-item>

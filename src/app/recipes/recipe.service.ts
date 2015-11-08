@@ -7,34 +7,34 @@ export class RecipeService {
 			cache: {
 				recipes: [
 					{
-						recipeId: 1,
+						recipeId: "1",
 						recipeTitle: "Recipe 1",
 						notes: "Notes about recipe",
-						sourceURL: "http://google.com"
+						sourceURL: "http://www.google.com"
 					},
 					{
-						recipeId: 2,
+						recipeId: "2",
 						recipeTitle: "Recipe 2",
 						notes: "Notes about recipe",
-						sourceURL: "http://google.com"
+						sourceURL: "http://www.google.com"
 					},
 					{
-						recipeId: 3,
+						recipeId: "3",
 						recipeTitle: "Recipe 3",
 						notes: "Notes about recipe",
-						sourceURL: "http://google.com"
+						sourceURL: "http://www.google.com"
 					},
 					{
-						recipeId: 4,
+						recipeId: "4",
 						recipeTitle: "Recipe 4",
 						notes: "Notes about recipe",
-						sourceURL: "http://google.com"
+						sourceURL: "http://www.google.com"
 					},
 				]
 			}
 		});
 
-		var test = model.get('recipes[0..9]["recipeTitle", "notes"]').then(function(response) {
+		var test = model.get('recipes[0..9]["recipeId", "recipeTitle", "notes", "sourceURL"]').then(function(response) {
 			return response.json.recipes;
 		});
 
