@@ -3,7 +3,6 @@ declare var falcor;
 import {Recipe} from './recipe';
 import {Injectable} from 'angular2/core';
 
-@Injectable()
 export class RecipeService {
 	getRecipes() {
 		// var model = new falcor.Model({

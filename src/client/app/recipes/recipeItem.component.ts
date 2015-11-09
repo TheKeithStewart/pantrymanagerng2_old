@@ -1,11 +1,13 @@
-import {Component} from 'angular2/angular2';
+import {Component, View} from 'angular2/angular2';
 import {Recipe} from './recipe'
 
 @Component({
 	selector: 'recipe-item',
 	properties: ['recipe'],
-	templateUrl: "app/recipes/recipeItem.component.html",
 	bindings: [Recipe]
+})
+@View({
+	templateUrl: "app/recipes/recipeItem.component.html"
 })
 export class RecipeItemComponent {
 
