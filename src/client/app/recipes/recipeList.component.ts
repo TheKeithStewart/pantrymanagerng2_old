@@ -28,6 +28,25 @@ export class RecipeListComponent implements OnInit {
                     this.recipes.push(response[i]);
                 }
             });
+        
+        
+        
+
+            
+        // this._recipesService.getRecipes()
+        //     .then(response => {
+        //         let recipeArray: Array<Recipe> = [];
+        //         for (var i in response) {
+        //             recipeArray.push(response[i]);
+        //         }
+        //         return recipeArray;
+        //     }).then((recipeArray: Array<Recipe>) => {
+        //         console.log(recipeArray);
+        //         this.recipes = recipeArray;
+        //     })
+        
+        // return this.recipes;
+
 
 		
 
