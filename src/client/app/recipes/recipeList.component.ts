@@ -15,7 +15,7 @@ interface IRecipeHash {
     directives: [CORE_DIRECTIVES, RecipeItemComponent]
 })
 export class RecipeListComponent implements OnInit {
-    public recipes: Recipe[];
+    recipes: Recipe[];
 
     constructor(private _recipesService: RecipeService) { }
 

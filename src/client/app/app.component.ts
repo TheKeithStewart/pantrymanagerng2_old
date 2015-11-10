@@ -12,6 +12,6 @@ import {HeaderComponent, FooterComponent} from './layout/layout.components'
 })
 @RouteConfig(APP_ROUTES)
 export class AppComponent {
-	public title = 'Pantry Manager';
-	public routes = Routes;
+	title = 'Pantry Manager';
+	routes = Routes;
 }

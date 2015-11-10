@@ -7,7 +7,7 @@ import {Component, View} from 'angular2/angular2';
 	templateUrl: 'app/layout/header.component.html'
 })
 export class HeaderComponent {
-	public title: string;
+	title: string;
 
 	constructor() {
 		this.title = "Pantry Manager";
@@ -21,7 +21,7 @@ export class HeaderComponent {
 	templateUrl: 'app/layout/footer.component.html'
 })
 export class FooterComponent {
-	public appVersion: string;
+	appVersion: string;
 
 	constructor() {
 		this.appVersion = "0.0.1";
