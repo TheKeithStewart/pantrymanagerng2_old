@@ -3,7 +3,7 @@ import {Recipe} from './recipe'
 
 @Component({
 	selector: 'recipe-item',
-	properties: ['recipe'],
+	inputs: ['recipe'],
 	bindings: [Recipe]
 })
 @View({
