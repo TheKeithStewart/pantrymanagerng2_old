@@ -1,9 +1,8 @@
 /// <reference path="./typings/tsd.d.ts" />
 
-// index.js
 var Router = require('falcor-router');
 
-var express = require('express');
+import express = require('express');
 var app = express();
 
 var datamodel = require(__dirname + '/datamodel.js');
