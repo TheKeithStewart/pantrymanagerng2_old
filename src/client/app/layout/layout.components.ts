@@ -1,10 +1,27 @@
 import {Component, View} from 'angular2/angular2';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
+import {APP_ROUTES} from './../route.config';
 
 @Component({
-	selector: 'header'
+	selector: 'navbar',
+	inputs: ['title', 'routes']
 })
 @View({
-	templateUrl: 'app/layout/header.component.html'
+	templateUrl: 'app/layout/navbar.component.html',
+	directives: [ROUTER_DIRECTIVES]
+})
+@RouteConfig(APP_ROUTES)	
+class NavBar {
+
+}
+
+@Component({
+	selector: 'header',
+	inputs: ['routes']
+})
+@View({
+	templateUrl: 'app/layout/header.component.html',
+	directives: [NavBar]
 })
 export class HeaderComponent {
 	title: string;
@@ -13,6 +30,17 @@ export class HeaderComponent {
 		this.title = "Pantry Manager";
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
 
 @Component({
 	selector: 'footer'

@@ -1,9 +1,15 @@
 import {RecipeListComponent} from './recipes/recipeList.component';
 import {PantryComponent} from './pantry/pantry.component';
+import {HomeComponent} from './home/home.component';
 
 export var Routes = {
-	recipes: {
+	home: {
 		path: '/',
+		as: 'Home',
+		component: HomeComponent
+	},	
+	recipes: {
+		path: '/recipes',
 		as: 'RecipeList',
 		component: RecipeListComponent
 	},
