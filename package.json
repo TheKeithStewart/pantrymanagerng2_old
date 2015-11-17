@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc -p src -w",
-    "nodemon_task": "nodemon --watch . --ext js,jsx src/server.js",
-    "nodemon": "npm-run-all --parallel nodemon_task"
+    "nodemon": "nodemon --watch . --ext js,jsx src/server.js",
+    "start": "npm-run-all --parallel nodemon tsc"
   },
   "repository": {
     "type": "git",
