@@ -1,0 +1,4 @@
+<ul class="nav navbar-nav navbar-right">
+  <li><a *ng-if="!loggedIn()" (click)="login()" class="router-link">Login</a></li>
+  <li><a *ng-if="loggedIn()" (click)="logout()" class="router-link">Logout</a></li>
+</ul>

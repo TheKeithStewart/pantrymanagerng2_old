@@ -1,6 +1,8 @@
-import {Component, View} from 'angular2/angular2';
+import {Component, View, NgIf} from 'angular2/angular2';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {APP_ROUTES} from './../route.config';
+import {AuthComponent} from './../auth/auth.component';
+import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 
 @Component({
 	selector: 'navbar',
@@ -8,11 +10,13 @@ import {APP_ROUTES} from './../route.config';
 })
 @View({
 	templateUrl: 'app/layout/navbar.component.html',
-	directives: [ROUTER_DIRECTIVES]
+	directives: [ROUTER_DIRECTIVES, AuthComponent, NgIf]
 })
 @RouteConfig(APP_ROUTES)	
 class NavBar {
-
+  loggedIn() {
+    return tokenNotExpired();
+  }
 }
 
 @Component({
@@ -30,17 +34,6 @@ export class HeaderComponent {
 		this.title = "Pantry Manager";
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @Component({
 	selector: 'footer'

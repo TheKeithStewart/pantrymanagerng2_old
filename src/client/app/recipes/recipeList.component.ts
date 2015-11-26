@@ -1,7 +1,9 @@
 import {Component, View, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
+import {CanActivate} from 'angular2/router';
 import {RecipeService} from './recipe.service';
 import {Recipe} from './recipe'
 import {RecipeItemComponent} from './recipeItem.component';
+import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 
 interface IRecipeHash {
     [index: number]: Recipe;
@@ -14,6 +16,7 @@ interface IRecipeHash {
     templateUrl: 'app/recipes/recipeList.component.html',
     directives: [CORE_DIRECTIVES, RecipeItemComponent]
 })
+@CanActivate(() => tokenNotExpired())
 export class RecipeListComponent implements OnInit {
     recipes: Recipe[];
 
