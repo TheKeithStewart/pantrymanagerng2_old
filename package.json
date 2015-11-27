@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm-run-all --parallel start:test tsc",
     "tsc": "tsc -p src -w",
     "nodemon": "nodemon --watch . --ext js,jsx src/server.js",
-    "start": "npm-run-all --parallel nodemon tsc"
+    "start": "npm-run-all --parallel nodemon tsc",
+    "start:test": "live-server --open=src/client/unit-tests.html"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "systemjs": "^0.19.5"
   },
   "devDependencies": {
+    "jasmine-core": "2.3.4",
     "live-server": "^0.8.2",
     "typescript": "^1.6.2",
     "watchify": "^3.6.0"

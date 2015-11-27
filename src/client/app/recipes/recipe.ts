@@ -1,11 +1,28 @@
 /// <reference path="./../../typings/tsd.d.ts" />
 
+// export class Recipe {
+// 	recipeId: string;
+// 	recipeTitle: string;
+// 	notes: string;
+// 	sourceURL: string;
+// }
+
 export class Recipe {
-	recipeId: string;
-	recipeTitle: string;
-	notes: string;
-	sourceURL: string;
+	constructor(
+		public recipeId?: string,
+		public recipeTitle?: string,
+		public notes?: string,
+		public sourceURL?: string
+	) {}
 }
+
+
+
+
+
+
+
+
 
 
 

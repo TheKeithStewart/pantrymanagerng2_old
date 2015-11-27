@@ -5,9 +5,9 @@ import {Recipe} from './recipe'
 import {RecipeItemComponent} from './recipeItem.component';
 import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 
-interface IRecipeHash {
-    [index: number]: Recipe;
-}
+// interface IRecipeHash {
+//     [index: number]: Recipe;
+// }
 
 @Component({
     selector: 'recipes'
@@ -18,7 +18,7 @@ interface IRecipeHash {
 })
 @CanActivate(() => tokenNotExpired())
 export class RecipeListComponent implements OnInit {
-    recipes: Recipe[];
+    recipes: Array<Recipe>;
 
     constructor(private _recipesService: RecipeService) { }
 

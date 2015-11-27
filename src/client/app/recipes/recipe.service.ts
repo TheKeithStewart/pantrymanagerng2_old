@@ -15,36 +15,11 @@ export class RecipeService {
 		// });
 		
 		var recipes = [
-			{
-				recipeId: "1",
-				recipeTitle: "Recipe 1 test",
-				notes: "Notes about recipe",
-				sourceURL: "http://www.google.com"
-			},
-			{
-				recipeId: "2",
-				recipeTitle: "Recipe 2",
-				notes: "Notes about recipe",
-				sourceURL: "http://www.google.com"
-			},
-			{
-				recipeId: "3",
-				recipeTitle: "Recipe 3",
-				notes: "Notes about recipe",
-				sourceURL: "http://www.google.com"
-			},
-			{
-				recipeId: "4",
-				recipeTitle: "Recipe 4",
-				notes: "Notes about recipe",
-				sourceURL: "http://www.google.com"
-			},
-			{
-				recipeId: "5",
-				recipeTitle: "Recipe 5",
-				notes: "Notes about recipe",
-				sourceURL: "http://www.google.com"
-			}
+			new Recipe("1", "Recipe 1 test", "Notes about recipe", "http://www.google.com"),
+			new Recipe("2", "Recipe 2", "Notes about recipe", "http://www.google.com"),
+			new Recipe("3", "Recipe 3", "Notes about recipe", "http://www.google.com"),
+			new Recipe("4", "Recipe 4", "Notes about recipe", "http://www.google.com"),
+			new Recipe("5", "Recipe 5", "Notes about recipe", "http://www.google.com")
 		];
 		
 		return Promise.resolve(recipes);

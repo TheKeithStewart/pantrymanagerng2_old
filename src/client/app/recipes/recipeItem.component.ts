@@ -3,8 +3,7 @@ import {Recipe} from './recipe'
 
 @Component({
 	selector: 'recipe-item',
-	inputs: ['recipe'],
-	bindings: [Recipe]
+	inputs: ['recipe']
 })
 @View({
 	templateUrl: "app/recipes/recipeItem.component.html"
