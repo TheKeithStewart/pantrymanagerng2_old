@@ -2,7 +2,7 @@ import {Component, View, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
 import {CanActivate} from 'angular2/router';
 import {RecipeService} from './recipe.service';
 import {Recipe} from './recipe'
-import {RecipeItemComponent} from './recipeItem.component';
+import {RecipeCardComponent} from './recipeCard.component';
 import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 
 // interface IRecipeHash {
@@ -13,11 +13,11 @@ import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
     selector: 'recipes'
 })
 @View({
-    templateUrl: 'app/recipes/recipeList.component.html',
-    directives: [CORE_DIRECTIVES, RecipeItemComponent]
+    templateUrl: 'app/recipes/recipes.component.html',
+    directives: [CORE_DIRECTIVES, RecipeCardComponent]
 })
 @CanActivate(() => tokenNotExpired())
-export class RecipeListComponent implements OnInit {
+export class RecipesComponent implements OnInit {
     recipes: Array<Recipe>;
 
     constructor(private _recipesService: RecipeService) { }
@@ -64,7 +64,7 @@ export class RecipeListComponent implements OnInit {
         // 		console.log('this.recipes', this.recipes);
 				
         // 		// 				this.recipes.push(
-        // 		// 	new RecipeItemComponent(
+        // 		// 	new RecipeCardComponent(
         // 		// 		recipeHash[i].recipeId,
         // 		// 		recipeHash[i].recipeTitle,
         // 		// 		recipeHash[i].notes,

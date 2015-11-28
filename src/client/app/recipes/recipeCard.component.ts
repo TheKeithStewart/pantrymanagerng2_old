@@ -2,12 +2,12 @@ import {Component, View} from 'angular2/angular2';
 import {Recipe} from './recipe'
 
 @Component({
-	selector: 'recipe-item',
+	selector: 'recipe-card',
 	inputs: ['recipe']
 })
 @View({
-	templateUrl: "app/recipes/recipeItem.component.html"
+	templateUrl: "app/recipes/recipeCard.component.html"
 })
-export class RecipeItemComponent {
+export class RecipeCardComponent {
 
 }

@@ -1,6 +1,6 @@
 <div class="container">
 	<h3>Recipes:</h3>
 	<div class="row">
-		<recipe-item *ng-for="#item of recipes" [recipe]="item"></recipe-item>
+		<recipe-card *ng-for="#item of recipes" [recipe]="item"></recipe-card>
 	</div>
 </div>
