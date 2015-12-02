@@ -1,8 +1,9 @@
 import {Component, View, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
-import {CanActivate} from 'angular2/router';
+import {CanActivate, ROUTER_DIRECTIVES} from 'angular2/router';
 import {RecipeService} from './recipe.service';
 import {Recipe} from './recipe'
 import {RecipeCardComponent} from './recipeCard.component';
+import {RecipeFormComponent} from './recipeForm.component';
 import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 
 // interface IRecipeHash {
@@ -14,11 +15,16 @@ import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 })
 @View({
     templateUrl: 'app/recipes/recipes.component.html',
-    directives: [CORE_DIRECTIVES, RecipeCardComponent]
+    directives: [
+        CORE_DIRECTIVES,
+        RecipeCardComponent,
+        ROUTER_DIRECTIVES,
+        RecipeFormComponent
+    ]
 })
 @CanActivate(() => tokenNotExpired())
 export class RecipesComponent implements OnInit {
-    recipes: Array<Recipe>;
+    public recipes: Array<Recipe>;
 
     constructor(private _recipesService: RecipeService) { }
 
@@ -78,4 +84,14 @@ export class RecipesComponent implements OnInit {
     onInit() {
         this.getRecipes();
     }
+    
+    // @TODO: use this function on the template
+    chooseRecipe(id: number) {
+        // this._recipesService.getRecipe(id).then(recipe => this.recipe = recipe);
+    }
+    
+    // onSubmit() {
+    //     this.recipes.push(this.recipe);
+    //     this.recipe = new Recipe();
+    // }
 }

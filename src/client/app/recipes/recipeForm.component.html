@@ -1,0 +1,30 @@
+<div class="container">
+	<h3>New Recipe:</h3>
+	<form (ng-submit)="onSubmit()" #rf="form">
+		<div class="form-group">
+			<label for="recipeTitle">Recipe Title:</label>
+			<input type="text" class="form-control" required [(ng-model)]="recipe.recipeTitle" ng-control="recipeTitle" #name="form">
+			<div [hidden]="name.valid" class="alert alert-danger">
+				Recipe Title is required
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="notes">Notes:</label>
+			<input type="text" class="form-control" [(ng-model)]="recipe.notes" ng-control="notes">
+		</div>
+		
+		<div class="form-group">
+			<label for="sourceURL">Source:</label>
+			<input type="text" class="form-control" [(ng-model)]="recipe.sourceURL" ng-control="sourceURL">
+		</div>
+		
+		<div class="form-group">
+			<h4>Recipe Instructions:</h4>
+			<recipe-instructions *ng-for="#instruction of recipe.instructions" [instruction]="instruction"></recipe-instructions>
+			<button (click)="addInstruction()">Add</button>
+		</div>
+		
+		<button type="submit" class="btn btn-default" [disabled]="!rf.form.valid">Submit</button>
+	</form>
+</div>
