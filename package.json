@@ -7,7 +7,7 @@
     "test": "npm-run-all --parallel start:test tsc",
     "tsc": "tsc -p src -w",
     "nodemon": "nodemon --watch . --ext js,jsx src/server.js",
-    "start": "npm-run-all --parallel nodemon tsc",
+    "start": "npm-run-all --parallel nodemon tsc start:test",
     "start:test": "live-server --open=src/client/unit-tests.html"
   },
   "repository": {
