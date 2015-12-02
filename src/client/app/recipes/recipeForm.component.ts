@@ -1,4 +1,4 @@
-import {Component, OnInit, FORM_DIRECTIVES, Input} from 'angular2/angular2';
+import {Component, OnInit, FORM_DIRECTIVES, Input, CORE_DIRECTIVES} from 'angular2/angular2';
 import {CanActivate, RouteParams} from 'angular2/router';
 import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 
@@ -10,7 +10,7 @@ import {RecipeInstructions} from './recipeInstructions/recipeInstructions';
 @Component({
 	selector: 'recipe-form',
 	templateUrl: 'app/recipes/recipeForm.component.html',
-	directives: [FORM_DIRECTIVES, RecipeInstructionsComponent],
+	directives: [FORM_DIRECTIVES, RecipeInstructionsComponent, CORE_DIRECTIVES],
 	inputs: ['recipes']
 })
 @CanActivate(() => tokenNotExpired())
