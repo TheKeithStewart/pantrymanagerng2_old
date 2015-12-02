@@ -1,19 +1,30 @@
-/// <reference path="./../../typings/tsd.d.ts" />
-
-// export class Recipe {
-// 	recipeId: string;
-// 	recipeTitle: string;
-// 	notes: string;
-// 	sourceURL: string;
-// }
+import {RecipeInstructions} from './recipeInstructions/recipeInstructions';
 
 export class Recipe {
 	constructor(
-		public recipeId?: string,
+		public recipeId?: number,
 		public recipeTitle?: string,
 		public notes?: string,
-		public sourceURL?: string
-	) {}
+		public sourceURL?: string,
+		public instructions?: Array<RecipeInstructions>,
+		public prepTime?: any,
+		public cookTime?: any,
+		public totalTime?: string
+	) {
+		if (!instructions) {
+			this.instructions = [];
+		}
+	}
+
+	calcTotalTime(): number | string {
+		if (this.prepTime && this.cookTime && !isNaN(this.prepTime) && !isNaN(this.cookTime)) {
+			return this.prepTime + this.cookTime;
+		} else if ((!this.prepTime || !this.cookTime) && this.totalTime) {
+			return this.totalTime;
+		} else {
+			return null;
+		}
+	}
 }
 
 

@@ -32,7 +32,8 @@
 
 <script>
 	Promise.all([
-		System.import('src/client/app/recipes/recipe.spec')
+		System.import('src/client/app/recipes/recipe.spec'),
+		System.import('src/client/app/common/ng2-duration/ng2-duration.pipe.spec')
 	])
 		.then(window.onload)
 		.catch(console.error.bind(console));
