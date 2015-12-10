@@ -1,7 +1,8 @@
 // declare var falcor;
 
-import {Recipe} from './recipe';
-import {Injectable} from 'angular2/core';
+import { Recipe } from './recipe';
+import { Injectable } from 'angular2/core';
+import { Http } from 'angular2/http';
 
 var RECIPES = [
 	new Recipe(1, "Recipe 1", "Notes about recipe", "http://www.google.com", null, 10, 25),
@@ -11,9 +12,10 @@ var RECIPES = [
 	new Recipe(5, "Recipe 5", "Notes about recipe", "http://www.google.com")
 ];
 
-// probably should use the Injectable keyword
+@Injectable()
 export class RecipeService {
-	
+
+	constructor(private _http: Http) {}
 	
 	getRecipes() {
 		// var model = new falcor.Model({
