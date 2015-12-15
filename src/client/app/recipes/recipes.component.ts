@@ -1,4 +1,5 @@
-import {Component, View, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
+import {Component, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
+import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {CanActivate, ROUTER_DIRECTIVES} from 'angular2/router';
 import {RecipeService} from './recipe.service';
 import {Recipe} from './recipe'
@@ -11,22 +12,28 @@ import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 // }
 
 @Component({
-    selector: 'recipes'
-})
-@View({
+    selector: 'recipes',
     templateUrl: 'app/recipes/recipes.component.html',
     directives: [
         CORE_DIRECTIVES,
         RecipeCardComponent,
         ROUTER_DIRECTIVES,
         RecipeFormComponent
-    ]
+    ],
+    viewProviders: [HTTP_PROVIDERS]
 })
 @CanActivate(() => tokenNotExpired())
 export class RecipesComponent implements OnInit {
     public recipes: Array<Recipe>;
 
-    constructor(private _recipesService: RecipeService) { }
+    constructor(private _recipesService: RecipeService, http: Http) {
+        // @TODO: remove hard coded URL and allow user to enter location of recipe source
+        http.get('scraperecipe?recipeUrl=http://www.oneingredientchef.com/sweet-potato-pie/')
+            .map(res => res.json())
+            .subscribe(recipe => {
+                console.log(recipe);
+            })
+    }
 
     getRecipes() {
         this.recipes = [];
