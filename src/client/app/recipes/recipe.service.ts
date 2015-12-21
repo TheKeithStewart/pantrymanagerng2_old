@@ -1,7 +1,9 @@
 // declare var falcor;
 
-import { Recipe } from './recipe';
 import { Injectable } from 'angular2/core';
+
+import { Recipe } from './recipe';
+
 import { Http } from 'angular2/http';
 
 var RECIPES = [

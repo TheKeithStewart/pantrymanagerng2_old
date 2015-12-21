@@ -1,6 +1,7 @@
 /// <reference path="./../../typings/tsd.d.ts" />
 
-import {Component, View, OnInit, NgIf} from 'angular2/angular2';
+import {Component, View, OnInit} from 'angular2/core';
+import {NgIf} from 'angular2/common';
 import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 
 @Component({

@@ -1,4 +1,5 @@
-import {Component, OnInit, FORM_DIRECTIVES, Input, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, OnInit, Input} from 'angular2/core';
+import {FORM_DIRECTIVES, CORE_DIRECTIVES} from 'angular2/common';
 import {CanActivate, RouteParams} from 'angular2/router';
 import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 

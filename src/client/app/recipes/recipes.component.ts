@@ -1,4 +1,5 @@
-import {Component, CORE_DIRECTIVES, OnInit} from 'angular2/angular2';
+import {Component, OnInit} from 'angular2/core';
+import {CORE_DIRECTIVES} from 'angular2/common';
 import {Http, HTTP_PROVIDERS} from 'angular2/http';
 import {CanActivate, ROUTER_DIRECTIVES} from 'angular2/router';
 import {RecipeService} from './recipe.service';

@@ -1,4 +1,4 @@
-import {Component} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 import {CanActivate} from 'angular2/router';
 import {tokenNotExpired} from 'angular2-jwt/angular2-jwt';
 

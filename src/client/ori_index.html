@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<base href="." />
+	<title>Pantry Manager</title>
+	<link href="styles.css" rel="stylesheet">
+	<link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="../../node_modules/angular2/bundles/angular2-polyfills.js"></script>
+</head>
+
+<body>
+	<pantry-manager>Loading...</pantry-manager>
+</body>
+
+<script src="../../node_modules/systemjs/dist/system.src.js"></script>
+<script src="../../node_modules/rxjs/bundles/Rx.js"></script>
+
+<!-- Auth0 Lock script and AngularJS module -->
+<script src="//cdn.auth0.com/js/lock-7.9.min.js"></script>
+
+<script>
+	System.config({
+		defaultJSExtensions: true,
+		map: {
+		"angular2-jwt": "node_modules/angular2-jwt"
+		}
+  });
+
+</script>
+
+
+<!--<script src="../../node_modules/falcor/dist/falcor.browser.js"></script>-->
+
+<script src="../../node_modules/angular2/bundles/angular2.dev.js"></script>
+<script src="../../node_modules/angular2/bundles/router.dev.js"></script>
+<script src="../../node_modules/angular2/bundles/http.dev.js"></script>
+
+<script>
+	System.import('app/bootstrap').catch(console.log.bind(console));
+
+</script>
+
+</html>

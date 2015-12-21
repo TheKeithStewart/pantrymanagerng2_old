@@ -1,4 +1,5 @@
-import {Component, View, NgIf} from 'angular2/angular2';
+import {Component, View} from 'angular2/core';
+import {NgIf} from 'angular2/common';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 import {APP_ROUTES} from './../route.config';
 import {AuthComponent} from './../auth/auth.component';

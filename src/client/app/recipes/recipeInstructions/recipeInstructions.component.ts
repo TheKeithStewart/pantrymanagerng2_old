@@ -1,4 +1,5 @@
-import {Component, OnInit, Input, FORM_DIRECTIVES} from 'angular2/angular2';
+import {Component, OnInit, Input} from 'angular2/core';
+import {FORM_DIRECTIVES} from 'angular2/common';
 import {RecipeInstructions} from './recipeInstructions';
 
 @Component({

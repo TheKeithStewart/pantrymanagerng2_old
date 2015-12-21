@@ -10,7 +10,7 @@ import {
     TestComponentBuilder,
     tick
 } from 'angular2/testing';
-import { Component, provide } from 'angular2/angular2';
+import { Component, provide } from 'angular2/core';
 import { MockBackend, BaseRequestOptions, Http } from 'angular2/http';
 
 import { AppComponent } from './../app.component';

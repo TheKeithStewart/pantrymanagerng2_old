@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/angular2';
+import {Component, View} from 'angular2/core';
 import {Recipe} from './recipe';
 import {Ng2DurationPipe} from './../common/ng2-duration/ng2-duration.pipe';
 
